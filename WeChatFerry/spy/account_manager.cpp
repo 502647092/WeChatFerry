@@ -83,6 +83,7 @@ UserInfo_t get_user_info()
     ui.name   = get_string_value(service_addr, OsAcc::NAME);
     ui.mobile = get_string_value(service_addr, OsAcc::MOBILE);
     ui.alias  = get_string_value(service_addr, OsAcc::ALIAS);
+    ui.head_image  = get_string_value(service_addr, OsAcc::HEAD_IMAGE);
     return ui;
 }
 
@@ -106,6 +107,7 @@ bool rpc_get_user_info(uint8_t *out, size_t *len)
         rsp.msg.ui.mobile = (char *)ui.mobile.c_str();
         rsp.msg.ui.home   = (char *)ui.home.c_str();
         rsp.msg.ui.alias  = (char *)ui.alias.c_str();
+        rsp.msg.ui.head_image  = (char *)ui.head_image.c_str();
     });
 }
 
